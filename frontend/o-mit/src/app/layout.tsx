@@ -1,4 +1,5 @@
-import { notoSans } from "./fonts";
+import Header from "./components/Header";
+import { notoSans, impact } from "./fonts";
 import "./globals.css";
 
 export const metadata = {
@@ -13,7 +14,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={notoSans.className}>
-      <body>{children}</body>
+      <body className="w-full max-w-screen-2xl overflow-auto mx-auto">
+        <header className={impact.className}>
+          <Header />
+        </header>
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
