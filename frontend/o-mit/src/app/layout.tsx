@@ -26,6 +26,7 @@ export default function RootLayout({
           </nav>
           <section className="w-full xl:basis-3/4">{children}</section>
         </main>
+        <div id="addStudyModal" />
       </body>
     </html>
   );
