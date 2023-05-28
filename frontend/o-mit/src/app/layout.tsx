@@ -1,6 +1,8 @@
-import Header from "./components/Header";
 import { notoSans, impact } from "./fonts";
 import "./globals.css";
+
+import Header from "./components/Header";
+import NavBar from "./components/nav/NavBar";
 
 export const metadata = {
   title: "Create Next App",
@@ -18,7 +20,12 @@ export default function RootLayout({
         <header className={impact.className}>
           <Header />
         </header>
-        <main>{children}</main>
+        <main className="flex flex-col xl:flex-row">
+          <nav className="sticky top-0 w-full h-full xl:basis-1/5">
+            <NavBar />
+          </nav>
+          <section className="w-full xl:basis-3/4">{children}</section>
+        </main>
       </body>
     </html>
   );
